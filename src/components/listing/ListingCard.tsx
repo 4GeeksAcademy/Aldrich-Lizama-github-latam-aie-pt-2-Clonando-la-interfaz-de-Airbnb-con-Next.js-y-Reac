@@ -42,7 +42,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ alojamiento }) => {
               Favorito entre huéspedes
             </div>
           )}
-          <FavoriteButton />
+          <FavoriteButton alojamientoId={id} />
         </div>
 
         {/* Información */}

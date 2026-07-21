@@ -10,6 +10,17 @@ import ListingCard from "@/components/listing/ListingCard";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("alojamientos");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("category");
+    if (cat) setActiveCategory(cat);
+  }, []);
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    window.history.replaceState(null, "", `/?category=${category}`);
+  };
   const [checkIn, setCheckIn] = useState(() => {
     const d = new Date();
     return d.toISOString().split("T")[0];
@@ -58,7 +69,7 @@ export default function Home() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
+        setActiveCategory={handleCategoryChange}
         checkIn={checkIn}
         setCheckIn={setCheckIn}
         checkOut={checkOut}

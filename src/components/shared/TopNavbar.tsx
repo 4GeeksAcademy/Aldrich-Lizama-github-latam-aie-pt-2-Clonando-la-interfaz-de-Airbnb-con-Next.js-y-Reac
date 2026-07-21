@@ -66,10 +66,10 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ searchQuery, setSearchQuery, acti
         <button className="rounded-full p-2 hover:bg-gray-100 transition-colors" aria-label="Idioma y región">
           <svg className="h-5 w-5 text-gray-600" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="8" cy="8" r="7" /><path d="M1 8h14M8 1c1.7 2 2.7 4.5 2.7 7S9.7 13 8 15M8 1C6.3 3 5.3 5.5 5.3 8S6.3 13 8 15" /></svg>
         </button>
-        <button className="flex items-center gap-2 rounded-full border border-gray-300 p-1 pl-3 hover:shadow-md transition-shadow" aria-label="Menú de usuario">
+        <Link href="/profile" className="flex items-center gap-2 rounded-full border border-gray-300 p-1 pl-3 hover:shadow-md transition-shadow" aria-label="Menú de usuario">
           <svg className="h-4 w-4 text-gray-600" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="8" width="24" height="2" /><rect x="4" y="15" width="24" height="2" /><rect x="4" y="22" width="24" height="2" /></svg>
-          <svg className="h-8 w-8 text-gray-600" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="12" r="5" /><path d="M4 30c0-6.6 5.4-12 12-12s12 5.4 12 12" /></svg>
-        </button>
+          <svg className="h-6 w-6 text-gray-600" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="12" r="5" /><path d="M4 30c0-6.6 5.4-12 12-12s12 5.4 12 12" /></svg>
+        </Link>
       </div>
     </div>
 
