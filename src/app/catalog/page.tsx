@@ -44,8 +44,8 @@ export default function CatalogPage() {
             <p className="text-sm text-gray-500">Cargando resultados...</p>
           </div>
         ) : (
-          <div className="md:flex">
-            <div className="flex-1 px-4 py-4 md:px-8">
+          <div className="md:flex md:justify-center">
+            <div className="flex-1 px-4 py-4 md:max-w-6xl md:px-8">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                 {ordenados.map((item) => (
                   <ListingCard key={item.id} alojamiento={item} />

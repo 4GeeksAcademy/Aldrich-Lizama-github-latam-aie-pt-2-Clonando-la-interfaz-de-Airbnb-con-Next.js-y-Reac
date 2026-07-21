@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import type { HabitacionDetalle } from "@/types";
-import { DETALLE_MOCK } from "@/data/mock";
+import { getDetalleById } from "@/data/mock";
 import DetailNavbar from "@/components/shared/DetailNavbar";
 import ImageGallery from "@/components/listing/ImageGallery";
 import DetailHeader from "@/components/listing/DetailHeader";
@@ -23,7 +23,8 @@ export default function RoomDetailPage() {
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      setDetalle({ ...DETALLE_MOCK, id: params.id as string });
+      const encontrado = getDetalleById(params.id as string);
+      setDetalle(encontrado ?? null);
       setLoading(false);
     }, 1000);
     return () => clearTimeout(timer);
@@ -59,7 +60,6 @@ export default function RoomDetailPage() {
         </div>
       </main>
 
-      <ReservationCard price={d.price} guestCount={guestCount} onGuestChange={setGuestCount} />
       <MobileNavigation />
     </div>
   );

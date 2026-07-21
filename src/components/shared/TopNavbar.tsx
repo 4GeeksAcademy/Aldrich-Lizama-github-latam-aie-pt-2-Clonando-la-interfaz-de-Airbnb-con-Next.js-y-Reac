@@ -44,7 +44,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ searchQuery, setSearchQuery, acti
   return (
   <header className="sticky top-0 z-30 bg-white border-b border-gray-200">
     {/* Fila superior: Logo + acciones */}
-    <div className="flex items-center justify-between px-4 py-3 md:px-8">
+    <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
       <Link href="/" className="shrink-0 text-xl font-bold text-[#FF385C]">🏠 airbnb</Link>
       <div className="hidden md:flex items-center gap-0 absolute left-1/2 -translate-x-1/2">
         <div className="flex items-center gap-1">
@@ -74,7 +74,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ searchQuery, setSearchQuery, acti
     </div>
 
     {/* Categorías en scroll horizontal para móvil */}
-    <div className="flex md:hidden overflow-x-auto px-4 pb-2 gap-1 scrollbar-hide">
+    <div className="flex md:hidden overflow-x-auto px-4 pb-2 gap-1 scrollbar-hide mx-auto max-w-7xl">
       {CATS.map((c) => {
         const isActive = c.id === activeCategory;
         return (
@@ -89,7 +89,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ searchQuery, setSearchQuery, acti
     </div>
 
     {/* Barra de búsqueda compacta para móvil */}
-    <div className="md:hidden px-4 pb-3">
+    <div className="md:hidden px-4 pb-3 mx-auto max-w-7xl">
       <button onClick={() => setShowMobileSearch(!showMobileSearch)}
         className="flex items-center gap-3 w-full rounded-full border border-gray-300 bg-white px-5 py-3 shadow-sm hover:shadow-md transition-shadow">
         <svg className="h-4 w-4 text-gray-500 shrink-0" viewBox="0 0 32 32" fill="currentColor"><path d="M13 0c7.2 0 13 5.8 13 13 0 3.1-1.1 6-2.9 8.2l8.3 8.3-2.1 2.1-8.3-8.3c-2.2 1.8-5.1 2.9-8.2 2.9C5.8 26 0 20.2 0 13S5.8 0 13 0zm0 4c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9z" /></svg>

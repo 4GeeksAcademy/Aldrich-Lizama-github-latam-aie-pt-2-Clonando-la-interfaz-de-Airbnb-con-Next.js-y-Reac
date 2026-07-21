@@ -67,7 +67,7 @@ export default function Home() {
         setGuests={setGuests}
       />
 
-      <main className="flex-1 px-4 py-6 md:px-8">
+      <main className="flex-1">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="flex flex-col items-center gap-3">
@@ -76,7 +76,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="space-y-10">
+          <div className="mx-auto max-w-7xl space-y-10 px-4 py-6 md:px-8">
             {/* Sección 1: Destacados */}
             {filtrados.filter((i) => i.isGuestFavorite).length > 0 && (
               <section>

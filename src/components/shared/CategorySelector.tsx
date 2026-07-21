@@ -13,7 +13,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
 }) => {
   return (
     <div className="overflow-x-auto scrollbar-none border-b border-gray-200">
-      <div className="flex gap-6 px-4 py-3 md:px-8">
+      <div className="mx-auto flex max-w-7xl gap-6 px-4 py-3 md:px-8">
         {categories.map((cat) => {
           const isActive = cat === activeCategory;
           return (
